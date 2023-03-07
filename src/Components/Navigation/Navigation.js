@@ -229,16 +229,16 @@ function Navigation() {
               </li>
             </ul>
           </div>
-          <button
-            className="btn menu-btn"
-            onClick={ handleMenuClick}
-          >
-            {showIcon ? (<i className="bars fa fa-bars" onClick={handleClick}></i>) : (<i className=" close fa fa-times" onClick={handleClick}></i>)
-            }
+          <button className="btn menu-btn" onClick={handleMenuClick}>
+            {showIcon ? (
+              <i className="bars fa fa-bars" onClick={handleClick}></i>
+            ) : (
+              <i className=" close fa fa-times" onClick={handleClick}></i>
+            )}
           </button>
         </nav>
         <ul
-          className="mobile-menu rounded animate__animated animate__delay-.2s animate__fadeInRight @media screen and (max-width: 768px) {
+          className="mobile-menu rounded animate__animated animate__delay-0.2s animate__fadeInLeftBig @media screen and (max-width: 768px) {
   .bg .container h1 {
     background-color: transparent;
     text-shadow: #000;
@@ -256,21 +256,21 @@ function Navigation() {
             display: showMenu ? "block" : "none",
           }}
         >
-          <li onClick={ handleMenuClick}>
+          <li onClick={handleMenuClick}>
             <Link to={"./"}>Home</Link>
           </li>
-          <li onClick={ handleMenuClick}>
+          <li onClick={handleMenuClick}>
             <Link to={"/about"}>About</Link>
           </li>
-          <li onClick={ handleMenuClick}>
+          <li onClick={handleMenuClick}>
             <Link to={"./financialplanning"}>Financial Planning</Link>
           </li>
-          <li onClick={ handleMenuClick}>
+          <li onClick={handleMenuClick}>
             <Link to={"./investmentplannig"}>Investment Planning</Link>
           </li>
-          <li onClick={ handleMenuClick}>Insurance</li>
-          <li onClick={ handleMenuClick}>Blog</li>
-          <li onClick={ handleMenuClick}>
+          <li onClick={handleMenuClick}>Insurance</li>
+          <li onClick={handleMenuClick}>Blog</li>
+          <li onClick={handleMenuClick}>
             <Link to={"./contact"}>Contact Us</Link>
           </li>
         </ul>

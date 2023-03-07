@@ -3,9 +3,8 @@
 }
 
 .mobile-menu {
-  margin: 15px;
   list-style: none;
-  text-align: right;
+  text-align: left;
   box-shadow: 0 0 2px 2px #d1caca4d;
   transition: 0.2s all;
 }
@@ -170,9 +169,10 @@ nav.sticky {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #a3eaec;
+  background-color: #39d1d6;
   transition: all 1s ease-in-out;
   transition-timing-function: ease-in-out;
+  z-index: 1;
 }
 
 .top-nav {
@@ -201,11 +201,11 @@ nav.sticky {
     transition: all 1s ease;
   }
   .mobile-menu {
-    position: fixed;
     right: 0;
     background-color: #fff;
-    height: 100%;
-    width: 50%;
+    width: 100%;
+    position: fixed;
+    top: 3.3em;
   }
 }
 
