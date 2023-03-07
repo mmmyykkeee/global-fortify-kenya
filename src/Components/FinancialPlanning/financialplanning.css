@@ -1,0 +1,58 @@
+.imgs img{
+    width: 100%;
+}
+
+span{
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.drop-letter{
+    font-size: 2em;
+    font-weight: 800;
+    margin-right: -8px;
+}
+
+
+.heading::before{
+content: '';
+position: absolute;
+background-color: #178B8F;
+width: 10px;
+height: 10px;
+margin-top: 1.2em;
+z-index: -1;
+}
+
+.heading::after{
+content: '';
+position: absolute;
+background-color: #178B8F;
+width: 4.5em;
+height: 5px;
+margin-top: 1.3em;
+margin-left: -5em;
+border-radius: 3px;
+z-index: -1;
+}
+
+.consultation-pic{
+    width: 30em;
+}
+
+.pages {
+  border: 3px solid #178b8f;
+  min-width: 3em;
+  max-width: 3em;
+  aspect-ratio: 3/3;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.pages:hover {
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}

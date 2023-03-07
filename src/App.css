@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+#chkToggle {
+  display: none;
+}
+
+#chkToggle:checked + ul.main-nav {
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .contact_top .contact_text {
+    margin: 40px 8px;
+  }
+}
+@media (max-width: 768px) {
+  .contact_top .contact_header {
+    margin-top: 3px;
+    font-size: 35px;
+  }
+  .contact_top .contact_text {
+    margin: 0px 0px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .contact_top_sec {
+    margin: 0px 20px;
+  }
+  .contact_top .contact_header {
+    font-size: 30px;
+  }
+  .contact_top .contact_text {
+    margin: 20px 0px;
+    font-size: 16px;
+  }
+  .contact_top_sec .contact_form {
+    border-radius: 0px;
+    margin: 0;
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 50px;
+  }
+  .contact_form .okay {
+    width: 60%;
+    height: 40px;
+  }
+  .thank-you-pop h1 {
+    font-size: 20px;
+  }
+  .thank-you-pop p {
+    font-size: 16px;
+  }
+  .contact_form input {
+    height: 56px;
+  }
+  .contact_form label {
+    padding: 6px 20px;
+  }
+  .contact_form input:focus ~ label,
+  .contact_form input:valid ~ label,
+  .contact_form textarea:focus ~ label,
+  .contact_form textarea:valid ~ label {
+    font-size: 12px;
+    top: -18px;
+  }
+}
+@media (max-width: 375px) {
+  .contact_top .contact_header {
+    font-size: 25px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .navbar {
+    display: flex !important;
+  }
+
+  #chkToggle:checked + ul.main-nav {
+    display: flex;
+  }
+
+  .main-nav {
+    display: flex;
+    margin-right: 30px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .main-nav li {
+    margin: 15px;
+  }
+
+  .nav-links {
+    margin-left: 40px;
+  }
+
+  .logo {
+    margin-top: 0;
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+
+  .logo:hover,
+  .nav-links:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+}
+@media only screen and (min-width: 992px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f68c1779.css",
+    "main.js": "/static/js/main.afc9fc3a.js",
+    "static/media/uap.png": "/static/media/uap.fc6127bedc047c47a1c4.png",
+    "static/media/icealion.png": "/static/media/icealion.a593f6042753cd3182e5.png",
+    "static/media/CIC.png": "/static/media/CIC.713c392a9431602d22fd.png",
+    "static/media/apa.png": "/static/media/apa.cd1b8c64c53b1190dc2e.png",
+    "static/media/old-mutual.png": "/static/media/old-mutual.bad6c82ce014b0fff2bf.png",
+    "static/media/Jubillee.png": "/static/media/Jubillee.be99e51baa7cd86b7e51.png",
+    "static/media/Heritage.png": "/static/media/Heritage.4ac5eaf0a832759ee728.png",
+    "static/media/AAR.png": "/static/media/AAR.5e84c3ab0543afbea0b5.png",
+    "index.html": "/index.html",
+    "main.f68c1779.css.map": "/static/css/main.f68c1779.css.map",
+    "main.afc9fc3a.js.map": "/static/js/main.afc9fc3a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f68c1779.css",
+    "static/js/main.afc9fc3a.js"
+  ]
+}

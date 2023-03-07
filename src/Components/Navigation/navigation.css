@@ -1,0 +1,234 @@
+.menu-btn {
+  display: none !important;
+}
+
+.mobile-menu {
+  margin: 15px;
+  list-style: none;
+  text-align: right;
+  box-shadow: 0 0 2px 2px #d1caca4d;
+  transition: 0.2s all;
+}
+
+.mobile-menu li {
+  margin: 10px;
+}
+
+.mobile-menu li:hover {
+  text-decoration: underline;
+  transition: 2s all;
+}
+
+.submenu {
+  display: none !important;
+  position: relative;
+  transition: 0.2s all;
+  list-style: none;
+  z-index: 1;
+
+}
+
+.submenu li {
+  text-align: left !important;
+  margin-left: -100px;
+}
+
+.navbar {
+  font-size: 18px;
+  background-color: #178b8f;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 10px;
+  min-height: 50px;
+}
+
+.main-nav {
+  list-style-type: none;
+  color: #000000;
+}
+
+.main-nav li:hover {
+  color: #fff;
+  text-decoration: underline;
+  transition: all 1s ease;
+}
+
+.main-nav li:hover .submenu {
+  display: block !important;
+  position: absolute;
+  top: 2.8em;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+}
+.submenu li {
+  margin-left: -1.2em !important;
+  color: #000;
+}
+
+.submenu li:hover {
+  text-decoration: underline;
+  color: #178b8f;
+}
+
+.nav-links,
+.logo {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.main-nav li {
+  text-align: center;
+  margin: .1em;
+}
+
+.logo {
+  display: inline-block;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.navbar-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
+}
+
+.side-menu,
+.side-menu1,
+.side-menu2,
+.side-menu3 {
+  display: none;
+  list-style: none;
+  position: absolute;
+  background-color: #fff;
+  top: 0;
+  font-size: 0.9em;
+  width: max-content;
+}
+
+.side-menu {
+  left: 10.5em;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.indicator i {
+  display: none;
+}
+
+.submenu i {
+  display: none;
+}
+.submenu:hover i {
+  display: inline;
+  margin-left: 2px;
+  text-decoration: none;
+}
+.indicator:hover i {
+  display: inline;
+  margin-left: 2px;
+  text-decoration: none;
+}
+
+.side-menu1 {
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+
+  left: 17.2em;
+}
+
+.side-menu2 {
+  left: 6.2em;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.side-menu3 {
+  left: 12.2em;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+}
+
+.sub-submenu:hover .side-menu {
+  display: block !important;
+}
+
+.sub-submenu:hover .side-menu1 {
+  display: block !important;
+}
+.sub-submenu:hover .side-menu2 {
+  display: block !important;
+}
+
+.sub-submenu:hover .side-menu3 {
+  display: block !important;
+}
+
+.link{
+  color: #000;
+}
+
+nav.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #a3eaec;
+  transition: all 1s ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+
+
+
+.top-nav{
+  margin-bottom: 1em;
+  
+}
+
+@media only screen and (max-width: 992px) {
+  .main-nav {
+    display: none;
+  }
+
+  .menu-btn {
+    position: absolute;
+    right: 15px;
+    display: block !important;
+  }
+  .mobile-menu li{
+    font-size: .5em;
+    transition: all 1s ease;
+  }
+ .mobile-menu{
+  position: fixed;
+right: 0;
+background-color: #fff;
+height: 100%;
+width: 50%;
+ }
+}
+
+/* @media only screen and (max-width: 768px) {
+
+ .mobile-menu{
+  
+top: 3;
+
+ }
+} */
+
+/* @media only screen and (max-width: 500px) {
+
+ .mobile-menu{
+  
+top: 3.6em;
+
+ }
+}
+
+@media only screen and (max-width: 400px) {
+
+ .mobile-menu{
+  
+top: 13.7%;
+
+ }
+} */

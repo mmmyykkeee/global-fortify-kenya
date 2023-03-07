@@ -1,0 +1,23 @@
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-check-label {
+  margin-right: 20px;
+}
+
+.form-check-input {
+  margin-right: 10px;
+}
+
+button[type='submit'] {
+  margin-top: 20px;
+}
+
+.form-holder{
+    max-width: 550px;
+}
+
+.radios{
+    display:  block !important;
+}
