@@ -17,6 +17,7 @@ import Investment from "../InvestmentPlanning/Investment";
 
 function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
+  const [showIcon, setShowIcon] = useState(true)
   const navbarRef = useRef(null);
   useEffect(() => {
     const navbar = navbarRef.current;
@@ -35,9 +36,15 @@ function Navigation() {
     };
   }, []);
 
+  function handleClick() {
+    setShowIcon(!showIcon)
+    setShowMenu(!showMenu)
+  }
   
-
-  
+    function handleMenuClick() {
+      setShowIcon(!showIcon);
+      setShowMenu(!showMenu);
+    }
   return (
     <div>
       <div className="top-nav">
@@ -223,10 +230,11 @@ function Navigation() {
             </ul>
           </div>
           <button
-            className="btn btn-primary menu-btn"
-            onClick={() => setShowMenu(!showMenu)}
+            className="btn menu-btn"
+            onClick={ handleMenuClick}
           >
-            Menu
+            {showIcon ? (<i className="bars fa fa-bars" onClick={handleClick}></i>) : (<i className=" close fa fa-times" onClick={handleClick}></i>)
+            }
           </button>
         </nav>
         <ul
@@ -248,22 +256,22 @@ function Navigation() {
             display: showMenu ? "block" : "none",
           }}
         >
-          <li onClick={()=> setShowMenu(!showMenu)}>
+          <li onClick={ handleMenuClick}>
             <Link to={"./"}>Home</Link>
           </li>
-          <li onClick={()=> setShowMenu(!showMenu)}>
+          <li onClick={ handleMenuClick}>
             <Link to={"/about"}>About</Link>
           </li>
-          <li onClick={()=> setShowMenu(!showMenu)}>
+          <li onClick={ handleMenuClick}>
             <Link to={"./financialplanning"}>Financial Planning</Link>
           </li>
-          <li onClick={()=> setShowMenu(!showMenu)}>
+          <li onClick={ handleMenuClick}>
             <Link to={"./investmentplannig"}>Investment Planning</Link>
           </li>
-          <li onClick={()=> setShowMenu(!showMenu)}>Insurance</li>
-          <li onClick={()=> setShowMenu(!showMenu)}>Blog</li>
-          <li onClick={()=> setShowMenu(!showMenu)}>
-            <Link to={'./contact'}>Contact Us</Link>
+          <li onClick={ handleMenuClick}>Insurance</li>
+          <li onClick={ handleMenuClick}>Blog</li>
+          <li onClick={ handleMenuClick}>
+            <Link to={"./contact"}>Contact Us</Link>
           </li>
         </ul>
       </div>
