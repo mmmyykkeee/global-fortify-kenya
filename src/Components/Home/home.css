@@ -107,20 +107,10 @@ left: 30%;
 
 }
 
-/* @media screen and (max-width: 768px) {
-  .bg .container h1 {
-    background-color: transparent;
-    text-shadow: #000;
-    background-blend-mode: color-burn;
-    font-size: 3em;
-    color: #5f664e;
-  }
-  .bg {
-    background: url(https://www.charings.com/wp-content/uploads/2021/06/banner-shape-01-1.png)
-      no-repeat top center / cover;
-    height: 60vh;
-  }
-} */
+.main-page-text {
+  color: #000;
+}
+
 
 @media screen and (max-width: 992px) {
   .bg .container h1 {
@@ -134,5 +124,8 @@ left: 30%;
     background: url(https://www.charings.com/wp-content/uploads/2021/06/banner-shape-01-1.png)
       no-repeat top center / cover;
     height: 60vh;
+  }
+  .main-page-text{
+    color:#ffffff;
   }
 }

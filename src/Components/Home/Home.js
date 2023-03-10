@@ -27,6 +27,15 @@ function Home() {
             <h1 className="animate__animated animate__slideInLeft animate__delay-0.2s">
               Get Insurance for almost anything you need
             </h1>
+            <h6 className="animate__animated animate__slideInLeft animate__delay-1s main-page-text fw-bold">
+              Global Fortify Financial Planning Consultants and Insurance Agency
+              is a highly respected company that specializes in offering
+              financial planning and insurance services to clients around the
+              world. Their team of experts works closely with clients to deliver
+              tailored solutions that meet their specific needs and objectives.
+              The company is committed to transparency, honesty, and integrity.
+             
+            </h6>
           </div>
         </div>
       </div>

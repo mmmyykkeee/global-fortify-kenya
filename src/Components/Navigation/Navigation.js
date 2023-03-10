@@ -26,6 +26,7 @@ import Agriculture from "../Insurance/Pages/Agriculture";
 import SMEs from "../Insurance/Pages/SMEs";
 import School from "../Insurance/Pages/School";
 import Personal from "../Insurance/Pages/Personal";
+import Blog from "../Blog/Blog";
 
 function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
@@ -370,7 +371,11 @@ function Navigation() {
                   </li>
                 </ul>
               </li>
-              <li>Blog</li>
+              <li>
+                <Link className="link" to={"/blog"}>
+                  Blog
+                </Link>
+              </li>
               <li>
                 {" "}
                 <Link className="link" to={"/contact"}>
@@ -418,8 +423,12 @@ function Navigation() {
           <li onClick={handleMenuClick}>
             <Link to={"./investmentplanning"}>Investment Planning</Link>
           </li>
-          <li onClick={handleMenuClick}>Insurance</li>
-          <li onClick={handleMenuClick}>Blog</li>
+          <li onClick={handleMenuClick}>
+            <Link to={"/insurance"}>Insurance</Link>
+          </li>
+          <li onClick={handleMenuClick}>
+            <Link to={'/blog'}>Blog</Link>
+          </li>
           <li onClick={handleMenuClick}>
             <Link to={"./contact"}>Contact Us</Link>
           </li>
@@ -448,6 +457,7 @@ function Navigation() {
         <Route path="/agriculture" element={<Agriculture />} />
         <Route path="/smes" element={<SMEs />} />
         <Route path="/school" element={<School />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/consultation" element={<ConsultationRequest />} />
       </Routes>
