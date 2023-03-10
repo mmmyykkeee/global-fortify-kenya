@@ -100,7 +100,7 @@
 .side-menu3 {
   display: none;
   list-style: none;
-  position: absolute;
+  position: relative;
   background-color: #fff;
   top: 0;
   font-size: 0.9em;
@@ -108,7 +108,7 @@
 }
 
 .side-menu {
-  left: 10.5em;
+  left: -1.5em;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -132,8 +132,6 @@
 
 .side-menu1 {
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
-
-  left: 17.2em;
 }
 
 .side-menu2 {
@@ -146,11 +144,11 @@
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 }
 
-.sub-submenu:hover .side-menu {
+/* .sub-submenu:hover .side-menu {
   display: block !important;
-}
+} */
 
-.sub-submenu:hover .side-menu1 {
+/* .sub-submenu:hover .side-menu1 {
   display: block !important;
 }
 .sub-submenu:hover .side-menu2 {
@@ -159,7 +157,7 @@
 
 .sub-submenu:hover .side-menu3 {
   display: block !important;
-}
+} */
 
 .link {
   color: #000;

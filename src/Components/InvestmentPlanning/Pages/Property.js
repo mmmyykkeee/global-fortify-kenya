@@ -5,7 +5,7 @@ import "./pages.css";
 function Property() {
   return (
     <div>
-      <div className="container text-center d-flex row mt-4">
+      <div className="container text-center d-flex row mt-4 p-0">
         <div className="col-lg-6 hide-image">
           <img width={"100%"} src="https://picsum.photos/600/200" alt="" />
         </div>

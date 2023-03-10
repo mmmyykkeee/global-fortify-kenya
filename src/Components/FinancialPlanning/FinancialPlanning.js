@@ -13,7 +13,7 @@ function FinancialPlanning() {
       <h3 className="heading mt">Life Stages</h3>
       <br />
       <div className="d-flex row">
-        <div className="col-lg-8">
+        <div className="col-lg-6">
           <p>
             <span>A</span> financial plan is simply a blueprint to help you
             build, grow and protect your family’s money in order to achieve your
@@ -30,7 +30,7 @@ function FinancialPlanning() {
             and seeing yourself make progress.
           </p>
         </div>
-        <div className="col-lg-4 imgs">
+        <div className="col-lg-4 mx-auto imgs">
           <img
             src="https://globalfortifykenya.com/wp-content/uploads/2020/05/crop-0-0-2560-1709-0-young-coworkers-working-on-computer-in-the-office-Q6A3WSQ-scaled-2048x1367.jpg"
             alt=""
@@ -81,7 +81,7 @@ function FinancialPlanning() {
       </div>
       <br />
       <div className="d-flex row">
-        <div className="col-lg-7">
+        <div className="col-lg-6">
           <h4>How We Work</h4>
           <p>
             Our Financial Planning process has been designed to help us fully
@@ -98,7 +98,7 @@ function FinancialPlanning() {
             <Link to={"/consultation"}>Click Here</Link>
           </p>
         </div>
-        <div className="col-lg-4 mb-5">
+        <div className="col-lg-4 mb-5 mx-auto">
           <img
             className="consultation-pic"
             src="https://img.freepik.com/free-vector/certified-nutritionist-counseling-appointment-cartoon-composition-with-dietitian-advises-client-healthy-cooking-food-choices_1284-59042.jpg?w=740&t=st=1677968543~exp=1677969143~hmac=1bed1376bb4eff73940703b602e3f597cc3b60acddbd394dce93a6a326f7b511"

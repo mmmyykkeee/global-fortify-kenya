@@ -3,7 +3,7 @@ import "./pages.css";
 
 const Cards = () => {
   return (
-    <div className="container text-center d-flex row m-0">
+    <div className="container text-center d-flex row p-0">
       <div className="col-lg-6">
         <h2>Cash</h2>
         <p>
@@ -15,8 +15,8 @@ const Cards = () => {
           your cash is decreasing.
         </p>
       </div>
-      <div className="col-lg-6 col-md-12">
-        <img width={'100%'} src="https://picsum.photos/600/200" alt="" />
+      <div className="col-lg-6 col-md-12 hide-image">
+        <img width={"100%"} src="https://picsum.photos/600/200" alt="" />
       </div>
     </div>
   );

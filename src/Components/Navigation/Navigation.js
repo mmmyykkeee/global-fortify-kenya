@@ -22,6 +22,7 @@ import Equities from "../InvestmentPlanning/Pages/Equities";
 function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
   const [showIcon, setShowIcon] = useState(true);
+  const [showSubMenu, setShowSubMenu] = useState(false)
   const navbarRef = useRef(null);
   useEffect(() => {
     const navbar = navbarRef.current;
@@ -48,6 +49,10 @@ function Navigation() {
   function handleMenuClick() {
     setShowIcon(!showIcon);
     setShowMenu(!showMenu);
+  }
+
+  function handleSubMenuClick() {
+    setShowSubMenu(!showSubMenu);
   }
   return (
     <div>
@@ -87,29 +92,31 @@ function Navigation() {
                 <ul className="submenu  rounded  animate__animated animate__flipInX animate__delay-.02s">
                   <div className="sub-submenu">
                     <li className="indicator">
-                      <Link to={"/financialplanning"}>Life Stages</Link>{" "}
+                      <Link
+                        to={"/financialplanning"}
+                        onClick={handleSubMenuClick}
+                      >
+                        Life Stages
+                      </Link>{" "}
                       <i class="fa fa-caret-right"></i>
                     </li>
-                    <ul className="side-menu rounded animate__animated animate__flipInX animate__delay-.02s">
+                    <ul
+                      className="side-menu rounded animate__animated animate__flipInX animate__delay-.02s"
+                      style={{
+                        display: showSubMenu ? "block" : "none",
+                      }}
+                    >
                       <li>
-                        <Link to={"/startingout"}>
-                          Starting Out (20-30 Years) Growth Stage
-                        </Link>
+                        <Link to={"/startingout"}>Starting Out</Link>
                       </li>
                       <li>
-                        <Link to={"/settlingdown"}>
-                          Settling Down (31-40 Years)
-                        </Link>
+                        <Link to={"/settlingdown"}>Settling Down</Link>
                       </li>
                       <li>
-                        <Link to={"/emptynest"}>
-                          Empty Nest (41 – 60 Years) Wealth Generation Stage
-                        </Link>
+                        <Link to={"/emptynest"}>Empty Nest</Link>
                       </li>
                       <li>
-                        <Link to={"/retirement"}>
-                          Retirement (Age 61 On-Wards) Leaving A Legacy
-                        </Link>
+                        <Link to={"/retirement"}>Retirement</Link>
                       </li>
                     </ul>
                   </div>
@@ -125,12 +132,19 @@ function Navigation() {
                 <ul className="submenu rounded animate__animated animate__flipInX animate__delay-.02s">
                   <li>
                     <div className="sub-submenu">
-                      <Link to={"/investmentplanning"}>
-                        {" "}
+                      <Link
+                        to={"/investmentplanning"}
+                        onClick={handleSubMenuClick}
+                      >
                         Understanding Investment Risk
                       </Link>
                       <i class="fa fa-caret-right"></i>
-                      <ul className="side-menu1 rounded animate__animated animate__flipInX animate__delay-.02s">
+                      <ul
+                        className="side-menu1 rounded animate__animated animate__flipInX animate__delay-.02s"
+                        style={{
+                          display: showSubMenu ? "block" : "none",
+                        }}
+                      >
                         <li>
                           <Link to="/cash">Cash</Link>
                         </li>
@@ -150,8 +164,17 @@ function Navigation() {
                   </li>
                   <li>
                     <div className="sub-submenu">
-                      Investment Products <i class="fa fa-caret-right"></i>
-                      <ul className="side-menu1 rounded animate__animated animate__flipInX animate__delay-.02s">
+                      <Link onClick={handleSubMenuClick}>
+                        Investment Products
+                      </Link>
+
+                      <i class="fa fa-caret-right"></i>
+                      <ul
+                        className="side-menu1 rounded animate__animated animate__flipInX animate__delay-.02s"
+                        style={{
+                          display: showSubMenu ? "block" : "none",
+                        }}
+                      >
                         <li>Unit Trust</li>
                         <li>Money Market Fund</li>
                         <li>Balance Fund</li>
@@ -163,11 +186,23 @@ function Navigation() {
                 </ul>
               </li>
               <li>
-                Insurance
-                <ul className="submenu rounded animate__animated animate__flipInX animate__delay-.02s">
+                <Link
+                  to={"/insurance"}
+                  className="link"
+                  
+                >
+                  Insurance
+                </Link>
+                <ul
+                  className="submenu rounded animate__animated animate__flipInX animate__delay-.02s"
+                  style={{
+                    display: showSubMenu ? "block" : "none",
+                  }}
+                >
                   <li>
                     <div className="sub-submenu">
-                      Personal <i class="fa fa-caret-right"></i>
+                      <Link to={'/'} onClick={handleSubMenuClick}>Personal</Link>
+                      <i class="fa fa-caret-right"></i>
                       <ul className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s">
                         <li>Life Assurance</li>
                         <li>Medical & Accident</li>

@@ -5,7 +5,7 @@ import "./pages.css";
 function Equities() {
   return (
     <div>
-      <div className="container text-center d-flex row">
+      <div className="container text-center d-flex row p-0">
         <div className="col-lg-6">
           <h2>Equities (Stocks and Shares)</h2>
           <p>
@@ -20,7 +20,7 @@ function Equities() {
             longer term.
           </p>
         </div>
-        <div className="col-lg-6">
+        <div className="col-lg-6 hide-image">
           <img width={"100%"} src="https://picsum.photos/600/250" alt="" />
         </div>
       </div>
