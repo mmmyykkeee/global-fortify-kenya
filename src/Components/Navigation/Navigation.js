@@ -5,8 +5,6 @@ import About from "../AboutUs/About";
 import Partners from "../AboutUs/Partners";
 import FinancialPlanning from "../FinancialPlanning/FinancialPlanning";
 import ConsultationRequest from "../Forms/ConsultationRequest";
-import "animate.css";
-import "./navigation.css";
 import ContactForm from "../ContactForm/ContactForm";
 import StartingOut from "../FinancialPlanning/LifeStages/StartingOut";
 import SettlingDown from "../FinancialPlanning/LifeStages/SettlingDown";
@@ -18,11 +16,27 @@ import Property from "../InvestmentPlanning/Pages/Property";
 import Cash from "../InvestmentPlanning/Pages/Cash";
 import Bonds from "../InvestmentPlanning/Pages/Bonds";
 import Equities from "../InvestmentPlanning/Pages/Equities";
+import "animate.css";
+import "./navigation.css";
+import Insurance from "../Insurance/Insurance";
+import Business from "../Insurance/Pages/Business";
+import Group from "../Insurance/Pages/Group";
+import Aviation from "../Insurance/Pages/Aviation";
+import Agriculture from "../Insurance/Pages/Agriculture";
+import SMEs from "../Insurance/Pages/SMEs";
+import School from "../Insurance/Pages/School";
+import Personal from "../Insurance/Pages/Personal";
 
 function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
   const [showIcon, setShowIcon] = useState(true);
-  const [showSubMenu, setShowSubMenu] = useState(false)
+  const [showSubMenu, setShowSubMenu] = useState(false);
+  const [showSubMenu1, setShowSubMenu1] = useState(false);
+  const [showSubMenu2, setShowSubMenu2] = useState(false);
+  const [showSubMenu3, setShowSubMenu3] = useState(false);
+  const [showSubMenu4, setShowSubMenu4] = useState(false);
+  const [isCaretDown, setIsCaretDown] = useState(false);
+
   const navbarRef = useRef(null);
   useEffect(() => {
     const navbar = navbarRef.current;
@@ -54,6 +68,23 @@ function Navigation() {
   function handleSubMenuClick() {
     setShowSubMenu(!showSubMenu);
   }
+  function handleSubMenuClick1() {
+    setShowSubMenu1(!showSubMenu1);
+  }
+  function handleSubMenuClick2() {
+    setShowSubMenu2(!showSubMenu2);
+  }
+  function handleSubMenuClick3() {
+    setShowSubMenu3(!showSubMenu3);
+  }
+  function handleSubMenuClick4() {
+    setShowSubMenu4(!showSubMenu4);
+  }
+
+  function flipCaret() {
+    setIsCaretDown(!isCaretDown);
+  }
+
   return (
     <div>
       <div className="top-nav">
@@ -91,14 +122,18 @@ function Navigation() {
                 </Link>
                 <ul className="submenu  rounded  animate__animated animate__flipInX animate__delay-.02s">
                   <div className="sub-submenu">
-                    <li className="indicator">
+                    <li className="indicator" onClick={flipCaret}>
                       <Link
                         to={"/financialplanning"}
                         onClick={handleSubMenuClick}
                       >
                         Life Stages
-                      </Link>{" "}
-                      <i class="fa fa-caret-right"></i>
+                      </Link>
+                      <i
+                        class={
+                          isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"
+                        }
+                      ></i>
                     </li>
                     <ul
                       className="side-menu rounded animate__animated animate__flipInX animate__delay-.02s"
@@ -130,7 +165,7 @@ function Navigation() {
                   Investment Planning
                 </Link>
                 <ul className="submenu rounded animate__animated animate__flipInX animate__delay-.02s">
-                  <li>
+                  <li onClick={flipCaret}>
                     <div className="sub-submenu">
                       <Link
                         to={"/investmentplanning"}
@@ -138,7 +173,11 @@ function Navigation() {
                       >
                         Understanding Investment Risk
                       </Link>
-                      <i class="fa fa-caret-right"></i>
+                      <i
+                        class={
+                          isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"
+                        }
+                      ></i>
                       <ul
                         className="side-menu1 rounded animate__animated animate__flipInX animate__delay-.02s"
                         style={{
@@ -162,17 +201,21 @@ function Navigation() {
                       </ul>
                     </div>
                   </li>
-                  <li>
+                  <li onClick={flipCaret}>
                     <div className="sub-submenu">
-                      <Link onClick={handleSubMenuClick}>
+                      <Link onClick={handleSubMenuClick1}>
                         Investment Products
                       </Link>
 
-                      <i class="fa fa-caret-right"></i>
+                      <i
+                        class={
+                          isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"
+                        }
+                      ></i>
                       <ul
                         className="side-menu1 rounded animate__animated animate__flipInX animate__delay-.02s"
                         style={{
-                          display: showSubMenu ? "block" : "none",
+                          display: showSubMenu1 ? "block" : "none",
                         }}
                       >
                         <li>Unit Trust</li>
@@ -186,24 +229,26 @@ function Navigation() {
                 </ul>
               </li>
               <li>
-                <Link
-                  to={"/insurance"}
-                  className="link"
-                  
-                >
+                <Link to={"/insurance"} className="link">
                   Insurance
                 </Link>
-                <ul
-                  className="submenu rounded animate__animated animate__flipInX animate__delay-.02s"
-                  style={{
-                    display: showSubMenu ? "block" : "none",
-                  }}
-                >
-                  <li>
+                <ul className="submenu rounded animate__animated animate__flipInX animate__delay-.02s">
+                  <li onClick={flipCaret}>
                     <div className="sub-submenu">
-                      <Link to={'/'} onClick={handleSubMenuClick}>Personal</Link>
-                      <i class="fa fa-caret-right"></i>
-                      <ul className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s">
+                      <Link to={"/personal"} onClick={handleSubMenuClick}>
+                        Personal
+                      </Link>
+                      <i
+                        class={
+                          isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"
+                        }
+                      ></i>
+                      <ul
+                        className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s"
+                        style={{
+                          display: showSubMenu ? "block" : "none",
+                        }}
+                      >
                         <li>Life Assurance</li>
                         <li>Medical & Accident</li>
                         <li>Private Motor Insurance</li>
@@ -215,10 +260,22 @@ function Navigation() {
                       </ul>
                     </div>
                   </li>
-                  <li>
+                  <li onClick={flipCaret}>
                     <div className="sub-submenu">
-                      Business Insurance <i class="fa fa-caret-right"></i>
-                      <ul className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s">
+                      <Link to={"/business"} onClick={handleSubMenuClick1}>
+                        Business Insurance
+                      </Link>{" "}
+                      <i
+                        class={
+                          isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"
+                        }
+                      ></i>
+                      <ul
+                        className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s"
+                        style={{
+                          display: showSubMenu1 ? "block" : "none",
+                        }}
+                      >
                         <li>Motor Commercial Insurance</li>
                         <li>Property</li>
                         <li>Liability</li>
@@ -226,10 +283,22 @@ function Navigation() {
                       </ul>
                     </div>
                   </li>
-                  <li>
+                  <li onClick={flipCaret}>
                     <div className="sub-submenu">
-                      Group Insurance <i class="fa fa-caret-right"></i>
-                      <ul className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s">
+                      <Link to={"/group"} onClick={handleSubMenuClick2}>
+                        Group Insurance
+                      </Link>{" "}
+                      <i
+                        class={
+                          isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"
+                        }
+                      ></i>
+                      <ul
+                        className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s"
+                        style={{
+                          display: showSubMenu2 ? "block" : "none",
+                        }}
+                      >
                         <li>Life Policy</li>
                         <li>Group Medical</li>
                         <li>Group Credit Life</li>
@@ -240,20 +309,44 @@ function Navigation() {
                       </ul>
                     </div>
                   </li>
-                  <li>
+                  <li onClick={flipCaret}>
                     <div className="sub-submenu">
-                      Aviation and Marine <i class="fa fa-caret-right"></i>
-                      <ul className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s">
+                      <Link to={"/aviation"} onClick={handleSubMenuClick3}>
+                        Aviation and Marine
+                      </Link>{" "}
+                      <i
+                        class={
+                          isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"
+                        }
+                      ></i>
+                      <ul
+                        className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s"
+                        style={{
+                          display: showSubMenu3 ? "block" : "none",
+                        }}
+                      >
                         <li>Aviation Insurance</li>
                         <li>Marine Cargo Insurance</li>
                         <li>Marine Hull Insurance</li>
                       </ul>
                     </div>
                   </li>
-                  <li>
+                  <li onClick={flipCaret}>
                     <div className="sub-submenu">
-                      Agriculture <i class="fa fa-caret-right"></i>
-                      <ul className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s">
+                      <Link to={"/agriculture"} onClick={handleSubMenuClick4}>
+                        Agriculture
+                      </Link>{" "}
+                      <i
+                        class={
+                          isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"
+                        }
+                      ></i>
+                      <ul
+                        className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s"
+                        style={{
+                          display: showSubMenu4 ? "block" : "none",
+                        }}
+                      >
                         <li>Crop Insurance</li>
                         <li>Horticulture</li>
                         <li>Forestry (Tree Crop) Insurance</li>
@@ -263,12 +356,16 @@ function Navigation() {
                   </li>
                   <li>
                     <div className="sub-submenu">
-                      Small and Medium Enterprices Insurance (SME)
+                      <Link to={"/smes"}>
+                        Small and Medium Enterprices Insurance (SME)
+                      </Link>
                     </div>
                   </li>
                   <li>
                     <div className="sub-submenu">
-                      Schools/Learning Institution Insurance
+                      <Link to={"/school"}>
+                        Schools/Learning Institution Insurance
+                      </Link>
                     </div>
                   </li>
                 </ul>
@@ -343,9 +440,16 @@ function Navigation() {
         <Route path="/bonds" element={<Bonds />} />
         <Route path="/equities" element={<Equities />} />
         <Route path="/property" element={<Property />} />
+        <Route path="/insurance" element={<Insurance />} />
+        <Route path="/personal" element={<Personal />} />
+        <Route path="/business" element={<Business />} />
+        <Route path="/group" element={<Group />} />
+        <Route path="/aviation" element={<Aviation />} />
+        <Route path="/agriculture" element={<Agriculture />} />
+        <Route path="/smes" element={<SMEs />} />
+        <Route path="/school" element={<School />} />
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/consultation" element={<ConsultationRequest />} />
-        consultation
       </Routes>
     </div>
   );
