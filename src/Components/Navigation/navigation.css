@@ -194,7 +194,7 @@ nav.sticky {
     position: absolute;
     right: 15px;
     display: block !important;
-    box-shadow: 0 0 10px 5px #066168 !important;
+    box-shadow: 0 0 18px 1px #0c838b !important;
   }
   .mobile-menu li {
     font-size: 0.5em;

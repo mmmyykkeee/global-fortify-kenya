@@ -14,10 +14,14 @@ import EmptyNest from "../FinancialPlanning/LifeStages/EmptyNest";
 import Retirement from "../FinancialPlanning/LifeStages/Retirement";
 import BusinessOwners from "../FinancialPlanning/BusinessOwners/BusinessOwners";
 import Investment from "../InvestmentPlanning/Investment";
+import Property from "../InvestmentPlanning/Pages/Property";
+import Cash from "../InvestmentPlanning/Pages/Cash";
+import Bonds from "../InvestmentPlanning/Pages/Bonds";
+import Equities from "../InvestmentPlanning/Pages/Equities";
 
 function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
-  const [showIcon, setShowIcon] = useState(true)
+  const [showIcon, setShowIcon] = useState(true);
   const navbarRef = useRef(null);
   useEffect(() => {
     const navbar = navbarRef.current;
@@ -37,14 +41,14 @@ function Navigation() {
   }, []);
 
   function handleClick() {
-    setShowIcon(!showIcon)
-    setShowMenu(!showMenu)
+    setShowIcon(!showIcon);
+    setShowMenu(!showMenu);
   }
-  
-    function handleMenuClick() {
-      setShowIcon(!showIcon);
-      setShowMenu(!showMenu);
-    }
+
+  function handleMenuClick() {
+    setShowIcon(!showIcon);
+    setShowMenu(!showMenu);
+  }
   return (
     <div>
       <div className="top-nav">
@@ -83,7 +87,8 @@ function Navigation() {
                 <ul className="submenu  rounded  animate__animated animate__flipInX animate__delay-.02s">
                   <div className="sub-submenu">
                     <li className="indicator">
-                      Life Stages <i class="fa fa-caret-right"></i>
+                      <Link to={"/financialplanning"}>Life Stages</Link>{" "}
+                      <i class="fa fa-caret-right"></i>
                     </li>
                     <ul className="side-menu rounded animate__animated animate__flipInX animate__delay-.02s">
                       <li>
@@ -114,19 +119,32 @@ function Navigation() {
                 </ul>
               </li>
               <li>
-                <Link className="link" to={"/investmentplannig"}>
+                <Link className="link" to={"/investmentplanning"}>
                   Investment Planning
                 </Link>
                 <ul className="submenu rounded animate__animated animate__flipInX animate__delay-.02s">
                   <li>
                     <div className="sub-submenu">
-                      Understanding Investment Risk
+                      <Link to={"/investmentplanning"}>
+                        {" "}
+                        Understanding Investment Risk
+                      </Link>
                       <i class="fa fa-caret-right"></i>
                       <ul className="side-menu1 rounded animate__animated animate__flipInX animate__delay-.02s">
-                        <li>Cash</li>
-                        <li>Bonds</li>
-                        <li>Equities (Stocks and Shares)</li>
-                        <li>Property</li>
+                        <li>
+                          <Link to="/cash">Cash</Link>
+                        </li>
+                        <li>
+                          <Link to="/bonds">Bonds</Link>
+                        </li>
+                        <li>
+                          <Link to="/equities">
+                            Equities (Stocks and Shares)
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/property">Property</Link>
+                        </li>
                       </ul>
                     </div>
                   </li>
@@ -266,7 +284,7 @@ function Navigation() {
             <Link to={"./financialplanning"}>Financial Planning</Link>
           </li>
           <li onClick={handleMenuClick}>
-            <Link to={"./investmentplannig"}>Investment Planning</Link>
+            <Link to={"./investmentplanning"}>Investment Planning</Link>
           </li>
           <li onClick={handleMenuClick}>Insurance</li>
           <li onClick={handleMenuClick}>Blog</li>
@@ -285,7 +303,11 @@ function Navigation() {
         <Route path="/emptynest" element={<EmptyNest />} />
         <Route path="/retirement" element={<Retirement />} />
         <Route path="/businessowners" element={<BusinessOwners />} />
-        <Route path="/investmentplannig" element={<Investment />} />
+        <Route path="/investmentplanning" element={<Investment />} />
+        <Route path="/cash" element={<Cash />} />
+        <Route path="/bonds" element={<Bonds />} />
+        <Route path="/equities" element={<Equities />} />
+        <Route path="/property" element={<Property />} />
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/consultation" element={<ConsultationRequest />} />
         consultation

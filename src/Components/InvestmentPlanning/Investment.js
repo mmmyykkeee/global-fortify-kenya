@@ -1,6 +1,10 @@
-import React, {useEffect} from 'react'
-import { Link } from 'react-router-dom'
-import Cards from './Cards/Cards'
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import Cash from "./Pages/Cash";
+import PagesPagination from "./Pages/PagesPagination";
+import Bonds from "./Pages/Bonds";
+import Equities from "./Pages/Equities";
+import Property from "./Pages/Property";
 function Investment() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -8,8 +12,8 @@ function Investment() {
   return (
     <div className="container">
       <h2 className="text-center">Investment Planning</h2>
-      <div className="d-flex">
-        <div className="col-lg-7 col-md-12">
+      <div className="d-flex row">
+        <div className="col-lg-6 col-md-12 text-center">
           <p>
             Investment planning allows you to match your financial goals and
             objectives with your financial resources and it begins when you are
@@ -23,20 +27,12 @@ function Investment() {
             strong foundation and as your circumstance change, we can help you
             make any necessary adjustments to keep you on track.
           </p>
-          <p>
-            To request for a free consultation, please{" "}
-            <Link to={"/consultation"}>Click Here</Link>
-          </p>
         </div>
-        <div className="col-lg-4 col-md-0 mx-4 mb-3">
-          <img
-            width="100%"
-            src="https://img.freepik.com/free-photo/desk-scene-with-laptop_23-2147626521.jpg?w=740&t=st=1678027714~exp=1678028314~hmac=486d2c84a843aa119db2f36598eff502d7d9f1be0c74e2a6418a734d2f9b6612"
-            alt=""
-          />
+        <div className="col-lg-6 col-md-0 mb-3">
+          <img width="100%" src="https://picsum.photos/600/200" alt="" />
         </div>
       </div>
-      <h2 className='text-center'>Understanding Investment Risk</h2>
+      <h2 className="text-center">Understanding Investment Risk</h2>
       <p>
         A key part of our financial planning process with you is to help you
         understand investment risk and to clearly establish your attitude to
@@ -45,9 +41,17 @@ function Investment() {
         types of investments but the main ones are Cash, Bonds, Equities (stocks
         and shares) and property.
       </p>
-      <Cards />
+      <Cash />
+      <Bonds />
+      <Equities />
+      <Property />
+      <PagesPagination />
+      <p className="text-center fw-bold">
+        To request for a free consultation, please{" "}
+        <Link to={"/consultation"}>Click Here</Link>
+      </p>
     </div>
   );
 }
 
-export default Investment
+export default Investment;
