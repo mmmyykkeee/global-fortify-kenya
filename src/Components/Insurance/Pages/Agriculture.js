@@ -1,14 +1,17 @@
-import React from 'react'
-import '../insurance.css'
+import React from "react";
+import "../insurance.css";
 function Agriculture() {
   return (
     <div className="container">
-      The agricultural sector continues to be a contributor of the Gross
-      Domestic Product (GDP) for Kenya. Being a backbone of our economy, it is
-      therefore important to manage risks well to sustain and improve the
-      contribution it has. Insuring agriculture means that a farmer’s investment
-      is not lost should any insured event occur and it therefore secures a
-      farmer’s income through the compensation.
+      <h3 className="text-center">Agriculture</h3>
+      <p>
+        The agricultural sector continues to be a contributor of the Gross
+        Domestic Product (GDP) for Kenya. Being a backbone of our economy, it is
+        therefore important to manage risks well to sustain and improve the
+        contribution it has. Insuring agriculture means that a farmer’s
+        investment is not lost should any insured event occur and it therefore
+        secures a farmer’s income through the compensation.
+      </p>
       <h3 className="text-center">Crop Insurance</h3>
       <p>
         This covers crops against physical loss or damage to growing crop. The
@@ -56,7 +59,7 @@ function Agriculture() {
         <li>Storm (Including Hail or weight of snow)</li>
         <li>Salvage costs</li>
       </ul>
-      <p>Get a Quote</p>
+
       <h3 className="text-center">Forestry (Tree Crop) Insurance</h3>
       <p>This covers tree crop against damage as a result of:</p>
       <ul>
@@ -127,9 +130,8 @@ function Agriculture() {
         This device which has a unique number to identify the animal may be
         inserted into the animal’s stomach or a microchip into its body.
       </p>
-      <p>Get a quote</p>
     </div>
   );
 }
 
-export default Agriculture
+export default Agriculture;

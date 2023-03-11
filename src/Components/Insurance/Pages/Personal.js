@@ -1,10 +1,12 @@
-import React from 'react'
+import React from "react";
 
 function Personal() {
   return (
     <div className="container">
       <div className="personal_insurance">
-        <h3 className="text-center">Life Assurance</h3>
+        <h3 className="text-center">Personal Insurance</h3>
+
+        <h4>Life Assurance</h4>
         <p>
           Life assurance is a way to help protect your loved ones financially in
           event of your demise during the length of your policy. Your family has
@@ -181,7 +183,7 @@ function Personal() {
           e) Personal Accident Benefit – provides cover in the event of an
           accidental death to the insured
         </p>
-        <p>Get a quote</p>
+
         <h5>
           <em>Critical illness</em>
         </h5>
@@ -203,7 +205,7 @@ function Personal() {
           Multiple Sclerosis, Motor Neuron Disease, Dementia (including
           Alzheimer’s and Parkinson’s disease).
         </p>
-        <p>Get a quote</p>
+
         <h5>
           <em>Personal Accident</em>
         </h5>
@@ -213,7 +215,6 @@ function Personal() {
           income due to disablement and medical expenses arising from an
           accident.
         </p>
-        <p>Get a quote</p>
       </div>
       <div className="private_motor_insurance">
         <h3 className="text-center">Private Motor Insurance</h3>
@@ -224,7 +225,6 @@ function Personal() {
           Coverage provides Comprehensive, Third Party Fire & Theft or Third
           Party only.
         </p>
-        <p>Get a quote</p>
       </div>
       <div className="domestic_insurance">
         <h3 className="text-center">Domestic/Home Insurance</h3>
@@ -267,19 +267,17 @@ function Personal() {
           of third parties for accidental bodily injury and accidental loss of
           or damage to property.
         </p>
-        <p>Get a quote</p>
       </div>
       <div className="travel_insurance">
-        <h3 className="text-center">Travel Insurance</h3>
+        <h3>Travel Insurance</h3>
         <p>
           It covers accidental injuries, medical expenses, loss of personal
           effects and travel delays; hijackings, personal liability and legal
           expenses.
         </p>
-        <p>Get a quote</p>
       </div>
       <div className="sports_insurance">
-        <h3 className="text-center"></h3>
+        <h3>Sports Insurance</h3>
         <p>
           The sportsman insurance product covers the loss of, or damage to
           sports equipment and personal effects. The policy can be extended to
@@ -287,10 +285,9 @@ function Personal() {
           third party liability and medical expenses whilst the insured is in
           any sports arena.
         </p>
-        <p>Get a quote</p>
       </div>
       <div className="golfers_insurance">
-        <h3 className="Golfers Insurance"></h3>
+        <h3>Golfer Insurance</h3>
         <p>
           The golfer’s insurance provides protection against the following
           contingencies happening while on a golf course or club premises:
@@ -319,10 +316,9 @@ function Personal() {
             someone other than your caddy while playing
           </li>
         </ul>
-        <p>Get a quote</p>
       </div>
       <div className="retirement_planning">
-        <h3 className="text-center">Retirement Planning</h3>
+        <h3>Retirement Planning</h3>
         <p>
           Retirement is one of those inevitable phases of life, which marks the
           end of our careers that we have built over the years by acquiring
@@ -371,7 +367,7 @@ function Personal() {
           the growth of the benefit is made up of the amounts contributed and
           the interest accrued in order to build up funds for retirement.
         </p>
-        <p>Get a quote</p>
+
         <h5>
           <em>Annuity</em>
         </h5>
@@ -381,10 +377,9 @@ function Personal() {
           with a spouse. If the annuity is shared with a spouse, it reverts to
           the surviving spouse in case one death of the other spouse.
         </p>
-        <p>Get a quote</p>
       </div>
     </div>
   );
 }
 
-export default Personal
+export default Personal;

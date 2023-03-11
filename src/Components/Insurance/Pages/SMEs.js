@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 
 function SMEs() {
   return (
-    <div className='container'>
+    <div className="container">
       <p>
         This policy combines different classes of insurance and is tailor-made
         for small-to-medium-size businesses. It offers solutions including:
@@ -16,9 +16,8 @@ function SMEs() {
         <li>Work Injury Benefit – WIBA</li>
         <li>Public Liability</li>
       </ul>
-      <p>Get a quote</p>
     </div>
   );
 }
 
-export default SMEs
+export default SMEs;
