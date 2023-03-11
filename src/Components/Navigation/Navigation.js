@@ -37,6 +37,7 @@ function Navigation() {
   const [showSubMenu3, setShowSubMenu3] = useState(false);
   const [showSubMenu4, setShowSubMenu4] = useState(false);
   const [isCaretDown, setIsCaretDown] = useState(false);
+  const [isMobileSubMenuShown, setIsMobileSubMenuShown] = useState(false);
 
   const navbarRef = useRef(null);
   useEffect(() => {
@@ -84,6 +85,10 @@ function Navigation() {
 
   function flipCaret() {
     setIsCaretDown(!isCaretDown);
+  }
+
+  function showMobileMenu() { 
+    setIsMobileSubMenuShown(!isMobileSubMenuShown)
   }
 
   return (
@@ -414,20 +419,247 @@ function Navigation() {
           <li onClick={handleMenuClick}>
             <Link to={"./"}>Home</Link>
           </li>
-          <li onClick={handleMenuClick}>
-            <Link to={"/about"}>About</Link>
+          <li>
+            <p onClick={showMobileMenu}>About</p>
+            <ul
+              className="mobile-submenu rounded animate__animated animate__flipInX animate__delay-.02s"
+              style={{
+                display: isMobileSubMenuShown ? "block" : "none",
+              }}
+            >
+              <li>Who we are</li>
+              <li>How we Work</li>
+              <li>
+                <Link className="link" to={"/partners"}>
+                  Our Partners
+                </Link>
+              </li>
+            </ul>
           </li>
           <li onClick={handleMenuClick}>
             <Link to={"./financialplanning"}>Financial Planning</Link>
+            <ul className="mobile-submenu  rounded  animate__animated animate__flipInX animate__delay-.02s">
+              <div className="sub-submenu">
+                <li className="indicator" onClick={flipCaret}>
+                  <Link to={"/financialplanning"} onClick={handleSubMenuClick}>
+                    Life Stages
+                  </Link>
+                  <i
+                    class={isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"}
+                  ></i>
+                </li>
+                <ul
+                  className="side-menu rounded animate__animated animate__flipInX animate__delay-.02s"
+                  style={{
+                    display: showSubMenu ? "block" : "none",
+                  }}
+                >
+                  <li>
+                    <Link to={"/startingout"}>Starting Out</Link>
+                  </li>
+                  <li>
+                    <Link to={"/settlingdown"}>Settling Down</Link>
+                  </li>
+                  <li>
+                    <Link to={"/emptynest"}>Empty Nest</Link>
+                  </li>
+                  <li>
+                    <Link to={"/retirement"}>Retirement</Link>
+                  </li>
+                </ul>
+              </div>
+              <li>
+                <Link to={"/businessowners"}>Business Owners</Link>
+              </li>
+            </ul>
           </li>
           <li onClick={handleMenuClick}>
             <Link to={"./investmentplanning"}>Investment Planning</Link>
+            <ul className="mobile-submenu rounded animate__animated animate__flipInX animate__delay-.02s">
+              <li onClick={flipCaret}>
+                <div className="sub-submenu">
+                  <Link to={"/investmentplanning"} onClick={handleSubMenuClick}>
+                    Understanding Investment Risk
+                  </Link>
+                  <i
+                    class={isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"}
+                  ></i>
+                  <ul
+                    className="side-menu1 rounded animate__animated animate__flipInX animate__delay-.02s"
+                    style={{
+                      display: showSubMenu ? "block" : "none",
+                    }}
+                  >
+                    <li>
+                      <Link to="/cash">Cash</Link>
+                    </li>
+                    <li>
+                      <Link to="/bonds">Bonds</Link>
+                    </li>
+                    <li>
+                      <Link to="/equities">Equities (Stocks and Shares)</Link>
+                    </li>
+                    <li>
+                      <Link to="/property">Property</Link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li onClick={flipCaret}>
+                <div className="sub-submenu">
+                  <Link onClick={handleSubMenuClick1}>Investment Products</Link>
+
+                  <i
+                    class={isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"}
+                  ></i>
+                  <ul
+                    className="side-menu1 rounded animate__animated animate__flipInX animate__delay-.02s"
+                    style={{
+                      display: showSubMenu1 ? "block" : "none",
+                    }}
+                  >
+                    <li>Unit Trust</li>
+                    <li>Money Market Fund</li>
+                    <li>Balance Fund</li>
+                    <li>Equity Fund</li>
+                    <li>Real Estate Investment Trusts (REITS)</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
           </li>
           <li onClick={handleMenuClick}>
             <Link to={"/insurance"}>Insurance</Link>
+            <ul className="mobile-submenu rounded animate__animated animate__flipInX animate__delay-.02s">
+              <li onClick={flipCaret}>
+                <div className="sub-submenu">
+                  <Link to={"/personal"} onClick={handleSubMenuClick}>
+                    Personal
+                  </Link>
+                  <i
+                    class={isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"}
+                  ></i>
+                  <ul
+                    className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s"
+                    style={{
+                      display: showSubMenu ? "block" : "none",
+                    }}
+                  >
+                    <li>Life Assurance</li>
+                    <li>Medical & Accident</li>
+                    <li>Private Motor Insurance</li>
+                    <li>Domestic/Home Insurance</li>
+                    <li>Travel Insurance</li>
+                    <li>Sports Insurance</li>
+                    <li>Golfers Insurance</li>
+                    <li>Retirement Planning</li>
+                  </ul>
+                </div>
+              </li>
+              <li onClick={flipCaret}>
+                <div className="sub-submenu">
+                  <Link to={"/business"} onClick={handleSubMenuClick1}>
+                    Business Insurance
+                  </Link>{" "}
+                  <i
+                    class={isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"}
+                  ></i>
+                  <ul
+                    className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s"
+                    style={{
+                      display: showSubMenu1 ? "block" : "none",
+                    }}
+                  >
+                    <li>Motor Commercial Insurance</li>
+                    <li>Property</li>
+                    <li>Liability</li>
+                    <li>Engineering</li>
+                  </ul>
+                </div>
+              </li>
+              <li onClick={flipCaret}>
+                <div className="sub-submenu">
+                  <Link to={"/group"} onClick={handleSubMenuClick2}>
+                    Group Insurance
+                  </Link>{" "}
+                  <i
+                    class={isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"}
+                  ></i>
+                  <ul
+                    className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s"
+                    style={{
+                      display: showSubMenu2 ? "block" : "none",
+                    }}
+                  >
+                    <li>Life Policy</li>
+                    <li>Group Medical</li>
+                    <li>Group Credit Life</li>
+                    <li>Group Mortgage Protection</li>
+                    <li>Group Last Expense</li>
+                    <li>Group Pension/Provident Fund</li>
+                    <li>Umbrella Retirement Fund</li>
+                  </ul>
+                </div>
+              </li>
+              <li onClick={flipCaret}>
+                <div className="sub-submenu">
+                  <Link to={"/aviation"} onClick={handleSubMenuClick3}>
+                    Aviation and Marine
+                  </Link>{" "}
+                  <i
+                    class={isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"}
+                  ></i>
+                  <ul
+                    className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s"
+                    style={{
+                      display: showSubMenu3 ? "block" : "none",
+                    }}
+                  >
+                    <li>Aviation Insurance</li>
+                    <li>Marine Cargo Insurance</li>
+                    <li>Marine Hull Insurance</li>
+                  </ul>
+                </div>
+              </li>
+              <li onClick={flipCaret}>
+                <div className="sub-submenu">
+                  <Link to={"/agriculture"} onClick={handleSubMenuClick4}>
+                    Agriculture
+                  </Link>{" "}
+                  <i
+                    class={isCaretDown ? "fa fa-caret-down" : "fa fa-caret-up"}
+                  ></i>
+                  <ul
+                    className="side-menu3 rounded animate__animated animate__flipInX animate__delay-.02s"
+                    style={{
+                      display: showSubMenu4 ? "block" : "none",
+                    }}
+                  >
+                    <li>Crop Insurance</li>
+                    <li>Horticulture</li>
+                    <li>Forestry (Tree Crop) Insurance</li>
+                    <li>Livestock Insurance</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <div className="sub-submenu">
+                  <Link to={"/smes"}>
+                    Small and Medium Enterprices Insurance (SME)
+                  </Link>
+                </div>
+              </li>
+              <li>
+                <div className="sub-submenu">
+                  <Link to={"/school"}>
+                    Schools/Learning Institution Insurance
+                  </Link>
+                </div>
+              </li>
+            </ul>
           </li>
           <li onClick={handleMenuClick}>
-            <Link to={'/blog'}>Blog</Link>
+            <Link to={"/blog"}>Blog</Link>
           </li>
           <li onClick={handleMenuClick}>
             <Link to={"./contact"}>Contact Us</Link>
